@@ -1,0 +1,47 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <button class="btn btn-warning" (click)="listarUsuarios()">Consultar usuarios</button>
+      <br>
+      <hr>
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Usuario</th>
+                  <th>Correo</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Edad</th>
+                  <th>Institución</th>
+                  <th>Materias en curso</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let usuario of data">
+                  <td>{{ usuario.id }}</td>
+                  <td>{{ usuario.usuario }}</td>
+                  <td>{{ usuario.correo }}</td>
+                  <td>{{ usuario.primer_nombre }} {{ usuario.segundo_nombre }}</td>
+                  <td>{{ usuario.primer_apellido }} {{ usuario.segundo_apellido }}</td>
+                  <td>{{ usuario.edad }}</td>
+                  <td>{{ usuario.institucion }}</td>
+                  <td>{{ usuario.materias_en_curso }}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
